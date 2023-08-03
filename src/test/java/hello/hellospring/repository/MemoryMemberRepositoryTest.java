@@ -5,7 +5,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -25,6 +24,7 @@ class MemoryMemberRepositoryTest {
         repository.save(member);
 
         Member result = repository.findById(member.getId()).get();
+//        System.out.println("result = " + (result == member));
         assertThat(member).isEqualTo(result);
     }
 
@@ -57,4 +57,6 @@ class MemoryMemberRepositoryTest {
 
         assertThat(result.size()).isEqualTo(2);
     }
+
+
 }
